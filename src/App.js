@@ -46,7 +46,7 @@ const App = () => {
             </Container>
           </Navbar>
         </header>
-        <Container>
+        <Container className='mt-3'>
           <Row>
             <Col md={12}>
               <div className='wrapper'>
