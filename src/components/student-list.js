@@ -1,13 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { getStudents } from '../service/RequestService';
+import { selectLoading, selectStudents } from '../constants/selectors';
+import { getStudents } from '../actions/students';
 
 const StudentList = () => {
-  const [students, setStudents] = useState([]);
+  const students = useSelector(selectStudents);
+  const loading = useSelector(selectLoading);
+  const dispatch = useDispatch();
 
-  useEffect(async () => {
-    setStudents(await getStudents());
+  useEffect(() => {
+    dispatch(getStudents());
   }, []);
+
+  if (loading) {
+    return <div className='text-center'>
+      <strong>Loading...</strong>
+    </div>
+  }
 
   return (
     <div>
