@@ -11,7 +11,6 @@ const StudentList = () => {
 
   return (
     <div>
-      <div>{console.log(students)}</div>
       <p>Student list component</p>
     </div>
   );
