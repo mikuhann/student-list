@@ -1,6 +1,7 @@
 import {
   GET_STUDENTS,
   SET_LOADING,
+  CREATE_STUDENT,
 } from '../constants/actions';
 
 const initialState = {
@@ -17,6 +18,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         students: payload,
+      };
+    }
+    case CREATE_STUDENT: {
+      return {
+        ...state,
+        students: [...state.students, payload],
       };
     }
     case SET_LOADING: {

@@ -1,2 +1,3 @@
 export const GET_STUDENTS = 'GET_STUDENTS';
 export const SET_LOADING = 'SET_LOADING';
+export const CREATE_STUDENT = 'CREATE_STUDENT';

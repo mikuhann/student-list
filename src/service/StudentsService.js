@@ -6,3 +6,9 @@ export const getStudents = async () => {
 
   return res.data.payload;
 };
+
+export const createStudent = async (newStudent) => {
+  const res = await apiService.post(studentEndpoints.CREATE, newStudent);
+
+  return res.data.payload;
+};
